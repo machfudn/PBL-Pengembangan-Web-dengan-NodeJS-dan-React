@@ -1,0 +1,32 @@
+UNF =
+kodePembeli + namaPembeli + alamatPembeli + NoFakturPenjualan + tglPenjualan + kodeMetodePenjualan + metodePenjualan + { kodeBarang + namaBarang + kuantitas + satuanBarang + hargaBarang + jumlahBarang} + totalPembayaran + Pembayaran + sisaPembayaran + kembaliPembayaran + kodePenjual + namaPenjual +  namaPenerima
+
+1NF =
+TrPenjualan =
+@kodePembeli + namaPembeli + alamatPembeli + telpPembeli + @noFakturPenjualan + tglPenjualan + @kodeMetodePenjualan + metodePenjualan + @kodeBarang + namaBarang + kuantitasBarang + satuanBarang + hargaBarang + stockBarang + Pembayaran + @kodePenjual + namaPenjual + telpPenjual + alamatPenjual +  namaPenerima
+
+2NF =
+TrHeaderPenjualan =
+@kodePembeli + namaPembeli + alamatPembeli + telpPembeli + @noFakturPenjualan + tglPenjualan + @kodeMetodePenjualan + metodePenjualan +  @kodePenjual + namaPenjual + telpPenjual + alamatPenjual + namaPenerima
+TrDetailPenjualan =
+@noFakturPenjualan +  kuantitasBarang +  Pembayaran + @kodeBarang
+MsBarang =
+@kodeBarang + namaBarang + @kodeSatuanBarang + hargaBarang + stockBarang
+MsSatuanBarang =
+@kodeSatuanBarang + satuanBarang
+
+3NF =
+MsMetodePenjualan =
+@kodeMetodePenjualan + metodePenjualan
+MsPenjual =
+@kodePenjual + namaPenjual + alamatPenjual + telpPenjual
+MsPembeli =
+@kodePembeli + namaPembeli + alamatPembeli + telpPembeli + namaPenerima
+TrHeaderPenjualan = 
+@noFakturPenjualan + tglPenjualan + #kodeMetodePenjualan + #kodePenjual + #kodePembeli
+TrDetailPenjualan = 
+@noFakturPenjualan +  kuantitasBarang +  Pembayaran + #kodeBarang
+MsBarang =
+@kodeBarang + namaBarang + #kodeSatuanBarang + hargaBarang + stockBarang
+MsSatuanBarang =
+@kodeSatuanBarang + satuanBarang

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Tinggi Badan</title>
+	<style>
+		body {
+			border: 1px solid #ccc;
+			padding-left: 5px;
+			max-width: 500px;
+		}
+	</style>
+</head>
+
+<body>
+
+	<h1>Data Tinggi Badan yang Diurutkan</h1>
+
+	<div id="data-tinggi">
+	</div>
+
+	<script>
+		// Data Array Objek
+		let dataBunga = [
+			{nama: "Rose", tinggi: "178 cm"},
+			{nama: "Magnolia", tinggi: "153 cm"},
+			{nama: "Daisy", tinggi: "165 cm"},
+			{nama: "Jasmine", tinggi: "161 cm"},
+			{nama: "Violet", tinggi: "159 cm"},
+		];
+
+
+		function urutkanBerdasarkanNama(a, b) {
+
+			return a.nama.localeCompare(b.nama);
+		}
+
+		let dataBungaTerurut = [...dataBunga].sort(urutkanBerdasarkanNama);
+
+		const containerTinggi = document.getElementById('data-tinggi');
+
+		let htmlContent = '';
+		dataBungaTerurut.forEach(item => {
+			htmlContent += `<p>${item.nama} : ${item.tinggi}</p>`;
+		});
+
+		containerTinggi.innerHTML = htmlContent;
+	</script>
+</body>
+
+</html>
